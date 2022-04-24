@@ -4,7 +4,10 @@ step "Run a Script" {
         action_type = "Octopus.Script"
         properties = {
             Octopus.Action.RunOnServer = "true"
-            Octopus.Action.Script.ScriptBody = "echo \"Hello World!, from Octopus Deploy\""
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                echo "Hello World!, from Octopus Deploy"
+                echo "Testing Step 1"
+            EOT
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "Bash"
         }
