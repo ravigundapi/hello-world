@@ -8,6 +8,6 @@ step "Run a Script" {
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "Bash"
         }
-        worker_pool = "Default Worker Pool"
+        worker_pool = "Hosted Ubuntu"
     }
 }
