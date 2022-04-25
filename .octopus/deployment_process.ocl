@@ -4,27 +4,10 @@ step "Run a Script" {
         action_type = "Octopus.Script"
         properties = {
             Octopus.Action.RunOnServer = "true"
-            Octopus.Action.Script.ScriptBody = "echo \"Hello World!, from Octopus Deploy\""
+            Octopus.Action.Script.ScriptBody = "echo \"Hello World\""
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "Bash"
         }
-        worker_pool = "Hosted Ubuntu"
-    }
-}
-
-step "Run a Script - feature-branch" {
-
-    action {
-        action_type = "Octopus.Script"
-        properties = {
-            Octopus.Action.RunOnServer = "true"
-            Octopus.Action.Script.ScriptBody = <<-EOT
-                echo "Hello World, from Octopus Deploy!"
-                echo "Testing feature/branch"
-            EOT
-            Octopus.Action.Script.ScriptSource = "Inline"
-            Octopus.Action.Script.Syntax = "Bash"
-        }
-        worker_pool = "Hosted Ubuntu"
+        worker_pool = "Default Worker Pool"
     }
 }
